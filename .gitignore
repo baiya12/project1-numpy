@@ -1,0 +1,21 @@
+# 大体积模型与课程评测数据（由课程附件提供，不入库）
+weights/*.npz
+assets/reference_outputs.npz
+
+# 运行产物
+output_tokens.npz
+my_tokens.npz
+*.npz.tmp
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.ipynb_checkpoints/
+
+# 编辑器与系统文件
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

@@ -72,10 +72,12 @@ project1-numpy/
 ├── assets/                    # 10 张图片 + 参考数组（参考数组不入库）
 ├── weights/                   # 152 个视觉张量（不入库）
 ├── docs/
-│   ├── 实验报告.pdf / .docx    # 4 页实验报告
+│   ├── 实验报告.pdf            # 按官方 LaTeX 模板编译的成品（封面 + 5 页正文 + 批阅页）
+│   ├── report/
+│   │   ├── main.tex           # 报告源文件（XeLaTeX 编译）
+│   │   └── figs/              # 图 1 形状流水线、图 2 注意力系数
 │   ├── metrics.json           # 报告中全部指标与消融数据的原始输出
-│   ├── 课程原始README.md       # 课程附件的原始说明，留存备查
-│   └── figures/               # 图 1 形状流水线、图 2 注意力系数
+│   └── 课程原始README.md       # 课程附件的原始说明，留存备查
 ├── practice/                  # 课程练习题 PDF
 └── lecture-demos/             # 课堂示例脚本
 ```
@@ -108,8 +110,19 @@ numpy 2.3.5，Pillow 12.3.0，无 GPU。
 
 ## 实验报告
 
-`docs/实验报告.pdf`（4 页）：任务与方法、可复现性、结果与证据（分阶段误差 + 消融）、
-分析与反思（patchify 的 shape 变化、头合并漏转置的 bug）、贡献与 AI 使用说明。
+`docs/实验报告.pdf` 按课程下发的官方 LaTeX 模板（SZU Experiment Report Template，XeLaTeX）编译，
+结构为：封面 + Objectives / Overview / Implementations / Results / Discussion 五节（正文 5 页，
+符合“正文不超过 5 页”的要求）+ 指导教师批阅页。
+
+源文件在 `docs/report/main.tex`，编译方式（需 XeLaTeX，两遍以生成交叉引用）：
+
+```bash
+cd docs/report && xelatex main.tex && xelatex main.tex
+```
+
+也可以在 Overleaf 上直接导入 `docs/report/` 整个目录，编译器选 XeLaTeX。报告内容涵盖：任务与
+输入输出契约、复现环境与步骤、六个实现点与四个常见陷阱、分阶段误差表与消融表、patchify 的 shape
+变化、头合并漏转置的 bug 复盘、局限与改进，以及贡献与 AI 使用说明。
 
 ## 贡献与 AI 使用说明
 

@@ -19,3 +19,12 @@ venv/
 .idea/
 .DS_Store
 Thumbs.db
+
+# LaTeX 编译中间产物（报告源码保留在 docs/report/）
+docs/report/*.aux
+docs/report/*.log
+docs/report/*.out
+docs/report/*.toc
+docs/report/*.xdv
+docs/report/main.pdf
+docs/report/*.synctex.gz

@@ -1,0 +1,48 @@
+{
+  "params": {
+    "visual.class_embedding": [
+      768
+    ],
+    "visual.conv1.weight": [
+      768,
+      3,
+      32,
+      32
+    ],
+    "visual.ln_post.bias": [
+      768
+    ]
+  },
+  "tensor_count": 152,
+  "time_10img_s": 3.19,
+  "time_runs": [
+    3.28,
+    3.29,
+    3.19
+  ],
+  "output_shape": [
+    10,
+    512
+  ],
+  "output_dtype": "float32",
+  "unit_max_dev": 2.384185791015625e-07,
+  "output_max_err": 5.662441253662109e-07,
+  "single_shape": [
+    1,
+    512
+  ],
+  "batch_max_err": 4.0605664253234863e-07,
+  "attn_row_sum_err": 2.980232238769531e-07,
+  "attn_max_coef": 0.9965003728866577,
+  "attn_cls_row_top": 0.7720108032226562,
+  "ablation": {
+    "baseline": 4.3958425521850586e-07,
+    "no_scale": 0.12974141538143158,
+    "no_merge_transpose": 0.19909793138504028,
+    "relu": 0.27184081077575684,
+    "bad_residual": 0.32328206300735474,
+    "patchify_no_transpose": 3.8119730949401855,
+    "patchify_hwc_inner": 3.938159465789795,
+    "cls_slot_1": 0.21820393204689026
+  }
+}
